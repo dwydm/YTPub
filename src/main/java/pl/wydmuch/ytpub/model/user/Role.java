@@ -1,4 +1,4 @@
-package pl.wydmuch.ytpub.model;
+package pl.wydmuch.ytpub.model.user;
 
 public enum Role {
     ADMIN, EDITOR

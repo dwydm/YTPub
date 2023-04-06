@@ -1,7 +1,6 @@
 package pl.wydmuch.ytpub.service;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
@@ -10,10 +9,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import pl.wydmuch.ytpub.dto.*;
 import pl.wydmuch.ytpub.mapper.UserMapper;
-import pl.wydmuch.ytpub.model.Role;
-import pl.wydmuch.ytpub.model.User;
+import pl.wydmuch.ytpub.model.user.Role;
+import pl.wydmuch.ytpub.model.user.User;
 import pl.wydmuch.ytpub.repository.UserRepository;
-import pl.wydmuch.ytpub.service.auth.CustomUserDetailsService;
 
 import java.util.Base64;
 import java.util.List;

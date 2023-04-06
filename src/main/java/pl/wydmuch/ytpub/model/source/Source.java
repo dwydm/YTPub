@@ -1,8 +1,10 @@
-package pl.wydmuch.ytpub.model;
+package pl.wydmuch.ytpub.model.source;
 
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
+import pl.wydmuch.ytpub.model.topic.Topic;
+import pl.wydmuch.ytpub.model.user.User;
 
 import java.time.LocalDate;
 import java.util.UUID;

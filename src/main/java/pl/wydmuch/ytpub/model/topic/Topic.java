@@ -1,9 +1,11 @@
-package pl.wydmuch.ytpub.model;
+package pl.wydmuch.ytpub.model.topic;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
+import pl.wydmuch.ytpub.model.source.Source;
+import pl.wydmuch.ytpub.model.user.User;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

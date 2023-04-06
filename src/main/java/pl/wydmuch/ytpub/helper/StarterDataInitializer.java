@@ -7,12 +7,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 import pl.wydmuch.ytpub.dto.TopicDetailsDTO;
 import pl.wydmuch.ytpub.dto.UserAuthenticationDTO;
-import pl.wydmuch.ytpub.model.Role;
-import pl.wydmuch.ytpub.model.User;
+import pl.wydmuch.ytpub.model.user.Role;
+import pl.wydmuch.ytpub.model.user.User;
 import pl.wydmuch.ytpub.service.PublicationService;
 import pl.wydmuch.ytpub.service.UserService;
-
-import java.util.HashSet;
 
 @Component
 @Slf4j

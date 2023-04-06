@@ -1,7 +1,7 @@
 package pl.wydmuch.ytpub.mapper;
 
 import pl.wydmuch.ytpub.dto.SourceDTO;
-import pl.wydmuch.ytpub.model.Source;
+import pl.wydmuch.ytpub.model.source.Source;
 
 public class SourceMapper {
 

@@ -1,9 +1,10 @@
-package pl.wydmuch.ytpub.model;
+package pl.wydmuch.ytpub.model.user;
 
 import jakarta.persistence.*;
 import lombok.*;
+import pl.wydmuch.ytpub.model.source.Source;
+import pl.wydmuch.ytpub.model.topic.Topic;
 
-import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 

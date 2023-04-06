@@ -1,17 +1,13 @@
 package pl.wydmuch.ytpub.service;
 
 import lombok.RequiredArgsConstructor;
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
-import org.springframework.security.core.context.SecurityContext;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import pl.wydmuch.ytpub.dto.TopicDetailsDTO;
 import pl.wydmuch.ytpub.dto.TopicSheetDTO;
 import pl.wydmuch.ytpub.mapper.TopicMapper;
-import pl.wydmuch.ytpub.model.CoauthorStatus;
-import pl.wydmuch.ytpub.model.PublicationStatus;
-import pl.wydmuch.ytpub.model.Topic;
+import pl.wydmuch.ytpub.model.topic.CoauthorStatus;
+import pl.wydmuch.ytpub.model.topic.PublicationStatus;
+import pl.wydmuch.ytpub.model.topic.Topic;
 import pl.wydmuch.ytpub.repository.SourceRepository;
 import pl.wydmuch.ytpub.repository.TopicRepository;
 import pl.wydmuch.ytpub.repository.UserRepository;

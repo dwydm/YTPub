@@ -1,7 +1,7 @@
 package pl.wydmuch.ytpub.mapper;
 
 import pl.wydmuch.ytpub.dto.*;
-import pl.wydmuch.ytpub.model.User;
+import pl.wydmuch.ytpub.model.user.User;
 
 import java.util.stream.Collectors;
 

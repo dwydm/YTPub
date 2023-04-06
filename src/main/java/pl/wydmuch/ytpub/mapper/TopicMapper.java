@@ -2,7 +2,7 @@ package pl.wydmuch.ytpub.mapper;
 
 import pl.wydmuch.ytpub.dto.TopicDetailsDTO;
 import pl.wydmuch.ytpub.dto.TopicSheetDTO;
-import pl.wydmuch.ytpub.model.Topic;
+import pl.wydmuch.ytpub.model.topic.Topic;
 
 import java.util.stream.Collectors;
 

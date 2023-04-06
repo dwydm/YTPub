@@ -2,7 +2,11 @@ package pl.wydmuch.ytpub.repository;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-import pl.wydmuch.ytpub.model.*;
+import pl.wydmuch.ytpub.model.source.Source;
+import pl.wydmuch.ytpub.model.source.SourceType;
+import pl.wydmuch.ytpub.model.topic.PublicationStatus;
+import pl.wydmuch.ytpub.model.topic.Topic;
+import pl.wydmuch.ytpub.model.user.User;
 
 import java.util.List;
 import java.util.UUID;

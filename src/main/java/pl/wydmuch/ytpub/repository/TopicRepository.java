@@ -3,11 +3,10 @@ package pl.wydmuch.ytpub.repository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
-import org.springframework.transaction.annotation.Transactional;
-import pl.wydmuch.ytpub.model.CoauthorStatus;
-import pl.wydmuch.ytpub.model.PublicationStatus;
-import pl.wydmuch.ytpub.model.Topic;
-import pl.wydmuch.ytpub.model.User;
+import pl.wydmuch.ytpub.model.topic.CoauthorStatus;
+import pl.wydmuch.ytpub.model.topic.PublicationStatus;
+import pl.wydmuch.ytpub.model.topic.Topic;
+import pl.wydmuch.ytpub.model.user.User;
 
 import java.util.List;
 import java.util.Optional;
