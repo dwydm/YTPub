@@ -2,7 +2,6 @@ package pl.wydmuch.ytpub.web.rest;
 
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import pl.wydmuch.ytpub.dto.TopicDetailsDTO;
@@ -12,9 +11,8 @@ import pl.wydmuch.ytpub.service.PublicationService;
 import java.util.List;
 
 @RequiredArgsConstructor
-@CrossOrigin
+@CrossOrigin("http://localhost:3000")
 @RestController
-@Slf4j
 @RequestMapping("/api/topics")
 public class PublicationController {
     private final PublicationService publicationService;

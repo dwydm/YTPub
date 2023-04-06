@@ -1,9 +1,6 @@
 package pl.wydmuch.ytpub.mapper;
 
-import pl.wydmuch.ytpub.dto.UserAuthenticationDTO;
-import pl.wydmuch.ytpub.dto.UserDetailsDTO;
-import pl.wydmuch.ytpub.dto.UserProfileDTO;
-import pl.wydmuch.ytpub.dto.UserSimplifiedDTO;
+import pl.wydmuch.ytpub.dto.*;
 import pl.wydmuch.ytpub.model.User;
 
 import java.util.stream.Collectors;
@@ -47,6 +44,16 @@ public class UserMapper {
         return UserAuthenticationDTO.builder()
                 .email(user.getEmail())
                 .password(user.getPassword())
+                .build();
+    }
+
+    public  static UserAuthResponseDTO toAuthResponseDTO(User user, String token) {
+        return UserAuthResponseDTO.builder()
+                .id(user.getId().toString())
+                .email(user.getEmail())
+                .name(user.getName())
+                .token(token)
+                .role(user.getRole().name())
                 .build();
     }
 }

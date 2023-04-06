@@ -14,7 +14,7 @@ import pl.wydmuch.ytpub.service.UserService;
 import java.util.List;
 
 @RequiredArgsConstructor
-@CrossOrigin
+@CrossOrigin("http://localhost:3000")
 @Slf4j
 @RestController
 @RequestMapping("/api/users")
@@ -43,7 +43,7 @@ public class UserController {
             throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Unauthorized action");
         }
     }
-    @PatchMapping("/update/active/{id}")
+    @GetMapping("/update/active/{id}")
     public void userAccountActivation(@PathVariable("id") String id) {
         userService.updateUserActive(id);
     }

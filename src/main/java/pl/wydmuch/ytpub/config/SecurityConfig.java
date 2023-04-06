@@ -1,6 +1,6 @@
 package pl.wydmuch.ytpub.config;
 
-import org.springframework.beans.factory.annotation.Qualifier;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -14,7 +14,6 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import pl.wydmuch.ytpub.service.auth.CustomUserDetailsService;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -22,17 +21,8 @@ import java.util.List;
 
 @Configuration
 @EnableWebSecurity
+@RequiredArgsConstructor
 public class SecurityConfig {
-    private final CustomUserDetailsService userDetailsService;
-
-    public SecurityConfig(@Qualifier("customUserDetailsService") CustomUserDetailsService userDetailsService) {
-        this.userDetailsService = userDetailsService;
-    }
-
-/*    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder());
-    }*/
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -46,11 +36,9 @@ public class SecurityConfig {
                         .requestMatchers("/api/topics/**").hasAuthority("EDITOR")
                         .requestMatchers(HttpMethod.POST,"/api/auth/login","/api/auth/register").permitAll()
                         .anyRequest().permitAll()
+
                 )
                 .httpBasic(Customizer.withDefaults())
-                .userDetailsService(userDetailsService)
-                .sessionManagement(session -> session
-                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         .build();
     }
     @Bean
