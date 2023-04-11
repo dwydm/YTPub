@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom'
 import store from '../store'
 import axios from 'axios';
 import Logout from '../views/Logout';
+import { useSelector } from 'react-redux';
 
 export default function NavBar() {
-  const userName = store.getState().loggedUser.name;
-  const isAdmin = store.getState().loggedUser.role === "ADMIN";
+  const loggedUser = useSelector(state => state.store.user);
+  const userName = loggedUser.name;
+  const isAdmin = loggedUser.role === "ADMIN";
 
   return (
     <div>

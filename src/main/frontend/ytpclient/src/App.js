@@ -10,8 +10,9 @@ import MainNavBar from './layout/MainNavBar';
 import Login from './views/Login';
 import Users from './views/Users';
 
+
 function App() {
-  const authenticated = store.getState().loggedUser.name;
+  const authenticated = store.getState().loggedUser;
   return (
     <div class="App">
       <Router>
