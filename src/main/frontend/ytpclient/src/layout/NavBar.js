@@ -1,14 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import store from '../store'
-import axios from 'axios';
 import Logout from '../views/Logout';
 import { useSelector } from 'react-redux';
 
 export default function NavBar() {
-  const loggedUser = useSelector(state => state.store.user);
-  const userName = loggedUser.name;
-  const isAdmin = loggedUser.role === "ADMIN";
+  const { user } = useSelector((state) => state.loggedUser);
+  const isAdmin = user.role === "ADMIN";
 
   return (
     <div>
@@ -20,7 +17,7 @@ export default function NavBar() {
           </button>
           <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
             <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Welcome {userName}</h5>
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Welcome {user ? user.name : 'Guest'}</h5>
               <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">

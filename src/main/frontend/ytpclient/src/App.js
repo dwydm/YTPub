@@ -3,16 +3,16 @@ import './App.css';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Topics from './views/Topics';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import store from './store';
 import Register from './views/Register';
 import Welcome from './views/Welcome';
 import MainNavBar from './layout/MainNavBar';
 import Login from './views/Login';
 import Users from './views/Users';
+import { useSelector } from 'react-redux';
 
 
 function App() {
-  const authenticated = store.getState().loggedUser;
+  const authenticated = useSelector((state) => state.loggedUser.user);
   return (
     <div class="App">
       <Router>

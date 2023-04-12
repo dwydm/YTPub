@@ -1,11 +1,14 @@
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import store from '../store';
+import { useDispatch } from 'react-redux';
+import { clearToken } from '../store/token';
+import { clearUser } from '../store/loggedUser';
 
 function Logout() {
     let navigate = useNavigate();
-    store.dispatch({ type: 'SET_TOKEN', payload: null});
-    store.dispatch({ type: 'SET_USER', payload: null});
+    const dispatch = useDispatch();
+    dispatch(clearToken());
+    dispatch(clearUser());
     delete axios.defaults.headers.common["Authorization"];
     navigate("/welcome");
     };

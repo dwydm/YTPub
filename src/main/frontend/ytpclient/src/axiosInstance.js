@@ -1,5 +1,5 @@
 import axios from 'axios';
-import store from './store';
+import { useSelector } from 'react-redux';
 
 const axiosInstance = axios.create({
   baseURL: 'http://localhost:8080',
@@ -9,7 +9,7 @@ const axiosInstance = axios.create({
 axiosInstance.interceptors.request.use(
     config => {
       //const token = 'YWRtaW5AeXRwLmFwcDphZG1pbg==';
-      const token = store.getState().token;
+      const token = useSelector((state) => state.token.token);
       if(token) {
         config.headers['Authorization'] = `Basic ${token}`;
       }

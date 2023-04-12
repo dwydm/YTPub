@@ -1,11 +1,11 @@
-import React from 'react'
-import store from '../store';
+import React from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import GuestNavBar from './GuestNavBar'
+import GuestNavBar from './GuestNavBar';
 import NavBar from './NavBar';
+import { useSelector } from 'react-redux';
 
 export default function MainNavBar() {
-    const authenticated = store.getState().loggedUser;
+    const authenticated = useSelector((state) => state.loggedUser.user);
     const currentPath = useLocation().pathname;
 
     let navBar;

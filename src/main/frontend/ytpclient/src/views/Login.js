@@ -2,22 +2,23 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import AlertError from '../layout/AlertError';
-import store from '../store'
-import axiosInstance from '../axiosInstance';
+import { useDispatch, useSelector } from 'react-redux';
+import { setToken } from '../store/token';
 
 
 
 export default function Login() {
     let navigate = useNavigate();
+    const dispatch = useDispatch();
     const [user,setUser] = useState({
-      email:"",
-      password:""
+      email:'',
+      password:''
     })
 
-    const {email,password}=user
+    const {email,password}=user;
 
     const onInputChange=(event)=>{
-      setUser({...user, [event.target.name]:event.target.value})
+      setUser({...user, [event.target.name]: event.target.value})
     }
 
     const onSubmit=async (e) => {
@@ -31,11 +32,8 @@ export default function Login() {
             }
           }
         )
-      
-
-        store.dispatch({ type: 'SET_TOKEN', payload: response.data.token});
-        store.dispatch({ type: 'SET_USER', payload: response.data});
-        console.log(store.getState().token)
+          dispatch(setToken(response.data.token));
+          dispatch(setUser(response.data));
         navigate("/");
       }, (error) => {
         <AlertError message={error.message} />

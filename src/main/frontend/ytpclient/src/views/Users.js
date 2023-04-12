@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import axiosInstance from '../axiosInstance';
 import axios from 'axios';
-import store from '../store';
+import { useSelector } from 'react-redux';
 
 
 
 export default function Users() {
-    const [users,setUsers]=useState([])
+    const loggedUser = useSelector((state) => state.loggedUser.user);
+    const [users,setUsers]=useState([]);
 
     useEffect(()=> {
         loadUsers();
@@ -43,7 +44,7 @@ export default function Users() {
                 </thead>
                 <tbody>
                         {
-                        users.filter((user) => user.id != store.getState().loggedUser.id)
+                        users.filter((user) => user.id != loggedUser.id)
                         .map((user)=>(
                             
                             <tr>
