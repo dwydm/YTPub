@@ -18,10 +18,8 @@ function App() {
       <Router>
         <MainNavBar/>
         <Routes>
-          
-          <Route exact path="/" 
-            element={authenticated ? <Topics/> : <Welcome replace to={"/welcome"} />} 
-            />
+          <Route exact path="/" element={<Welcome/>} />
+          <Route exact path="/home"  element={<Topics/>}/>
           <Route exact path="/register" element={<Register/>} />
           <Route exact path="/login" element={<Login/>} />
           <Route exact path="/users" element={<Users/>} />

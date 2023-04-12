@@ -7,7 +7,7 @@ function Logout() {
     store.dispatch({ type: 'SET_TOKEN', payload: null});
     store.dispatch({ type: 'SET_USER', payload: null});
     delete axios.defaults.headers.common["Authorization"];
-    navigate("/welcome");
+    navigate("/");
     };
   
   

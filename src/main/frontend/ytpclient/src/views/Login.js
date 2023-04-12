@@ -31,12 +31,10 @@ export default function Login() {
             }
           }
         )
-      
-
         store.dispatch({ type: 'SET_TOKEN', payload: response.data.token});
         store.dispatch({ type: 'SET_USER', payload: response.data});
         console.log(store.getState().token)
-        navigate("/");
+        navigate("/home");
       }, (error) => {
         <AlertError message={error.message} />
       }
@@ -62,6 +60,11 @@ export default function Login() {
           </div>
           <button type="submit" class="btn btn-dark">Login</button>
         </form>
+      </div>
+      <br/>
+      <div>
+        <p>for viewing and testing purposes</p>
+        <p>admin: admin@ytp.app /// pw: admin</p>
       </div>
     </div>
 }

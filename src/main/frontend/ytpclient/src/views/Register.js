@@ -25,9 +25,7 @@ export default function Register() {
       <div class="reg-form">
         <form onSubmit={(e)=>onSubmit(e)}>
         <div class="form-text">
-          <p>Every account has to be activated by an ADMIN
-            <p>thank you for your understanding</p>
-          </p>
+          <p>Every account has to be activated by an ADMIN</p>
         </div>
         <br></br>
           <div class="mb-3">
@@ -37,11 +35,11 @@ export default function Register() {
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
             <input type="password" class="form-control" id="exampleInputPassword1" name='password' value={password} onChange={(event)=>onInputChange(event)} placeholder='password'/>
-            <div id="emailHelp" class="form-text">Never use your Bank or Gov passwords</div>
+            <div id="emailHelp" class="form-text">preferably pet or your</div>
+            <div id="emailHelp" class="form-text">high shool teacher's name</div>
           </div>
           <button type="submit" class="btn btn-dark">Register</button>
         </form>
-
       </div>
     </div>
 }
