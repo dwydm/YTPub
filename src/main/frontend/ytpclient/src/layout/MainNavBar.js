@@ -1,6 +1,6 @@
 import React from 'react'
 import store from '../store';
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import GuestNavBar from './GuestNavBar'
 import NavBar from './NavBar';
 

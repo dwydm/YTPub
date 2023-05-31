@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axiosInstance from '../axiosInstance';
 import whytipi from '../layout/whytipi.png';
+import { Link } from 'react-router-dom';
 
 export default function Topics() {
     const [topics, setTopics]=useState([])
@@ -50,8 +51,9 @@ export default function Topics() {
                             <td>{topic.coauthorStatus}</td>
                             <td>{topic.publicationStatus}</td>
                             <td>
-                                <button className='btn btn-outline-dark'>Details</button>
-
+                                    
+                                <Link className='btn btn-outline-dark' to={`/article/${topic.id}`}>Details</Link>
+                                
                             </td>
                         </tr>
 

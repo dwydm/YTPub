@@ -9,6 +9,10 @@ import Welcome from './views/Welcome';
 import MainNavBar from './layout/MainNavBar';
 import Login from './views/Login';
 import Users from './views/Users';
+import Profile from './views/Profile';
+import Sheet from './views/Sheet';
+import NewTopic from './views/NewTopipc';
+
 
 
 function App() {
@@ -23,6 +27,9 @@ function App() {
           <Route exact path="/register" element={<Register/>} />
           <Route exact path="/login" element={<Login/>} />
           <Route exact path="/users" element={<Users/>} />
+          <Route exact path="/profile" element={<Profile/>} />
+          <Route exact path="/sheet" element={<Sheet/>} />
+          <Route exact path="/create" element={<NewTopic/>} />
         </Routes>
       </Router>
     </div>

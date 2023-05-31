@@ -28,9 +28,17 @@ export default function NavBar() {
                 <li class="nav-item">
                   <Link class="nav-link active" aria-current="page" to="/home">Main</Link>
                 </li>
+                <li>
+                  <Link className="btn btn-dark" to="/">Profile</Link>
+                </li>
                 {isAdmin &&               
                 <li>
                   <Link className="btn btn-dark" to="/users">Users</Link>
+                </li>
+                }
+                {!isAdmin &&               
+                <li>
+                  <Link className="btn btn-dark" to="/users">New Topic</Link>
                 </li>
                 }
                 <li>

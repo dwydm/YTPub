@@ -18,13 +18,13 @@ export default function Users() {
     }
     function handleUserClick(userId) {
         const response = axiosInstance.get(`http://localhost:8080/api/users/update/active/${userId}`)
-          .then(() => {
+        .then(() => {
             loadUsers();
-          })
-          .catch((error) => {
+        })
+        .catch((error) => {
             console.error('Error updating user data:', error);
-          });
-      }
+        });
+    }
       
 
 
